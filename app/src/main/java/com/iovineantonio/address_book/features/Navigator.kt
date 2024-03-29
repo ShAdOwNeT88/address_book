@@ -36,7 +36,7 @@ class AppNavigator : Navigator {
 
     override fun openEmail(activity: Activity, emailAddress: String) {
         val intent = Intent(Intent.ACTION_SENDTO)
-        intent.setData(Uri.parse("mailto:"))
+        intent.setData(Uri.parse("mailto:$emailAddress"))
         intent.putExtra(Intent.EXTRA_EMAIL, emailAddress)
         startActivityWithIntent(activity, intent)
     }

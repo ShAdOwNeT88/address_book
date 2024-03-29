@@ -24,7 +24,7 @@ import timber.log.Timber
 class AddContactScreen : Fragment() {
     private lateinit var binding: ScreenAddContactBinding
     private val addContactViewModel: AddContactViewModel by inject()
-    git pull --rebase origin main    private val disposables = CompositeDisposable()
+    private val disposables = CompositeDisposable()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = ScreenAddContactBinding.inflate(inflater, container, false)
