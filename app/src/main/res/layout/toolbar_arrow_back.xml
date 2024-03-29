@@ -1,0 +1,40 @@
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_main"
+    style="@style/WindowBackgroundColorBackground"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:minHeight="?attr/actionBarSize">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/toolbar_back"
+            android:layout_width="@dimen/address_book_margin_xbig"
+            android:layout_height="@dimen/address_book_margin_xbig"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/address_book_margin_smaller"
+            android:background="@drawable/custom_item_bg_round"
+            android:elevation="@dimen/elevation_standard"
+            android:padding="@dimen/address_book_default_padding"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/PrimaryText"
+            android:layout_width="@dimen/view_match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/address_book_margin_bigger"
+            android:layout_toEndOf="@id/toolbar_back"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="@dimen/address_book_text_size_bigger"
+            android:visibility="gone"
+            tools:text="Personal Informations" />
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>
+

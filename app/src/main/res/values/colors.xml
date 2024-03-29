@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="cluster_icon_text">#E0D1FF</color>
+    <color name="viewpager_selected_indicator">#E6F5FF</color>
+    <color name="viewpager_unselected_indicator">#A1ACB3</color>
+
+    <!-- General colors-->
+    <color name="colorPrimary">#316187</color>
+    <color name="blue_dark">#202837</color>
+    <color name="blue">#4a90e2</color>
+    <color name="blue_lighter">#71c2fb</color>
+    <color name="blue_light">#9fe7f4</color>
+    <color name="very_light_blue">#E5F0FF</color>
+    <color name="purple">#7E4EE2</color>
+    <color name="purple_light">#7e57c2</color>
+    <color name="purple_very_light">#CCB5FF</color>
+    <color name="red">#e34335</color>
+
+    <!-- Brand identity colors -->
+    <color name="base_blue">#316187</color>
+    <color name="base_grey">#CCCCCC</color>
+    <color name="base_green">#3D9970</color>
+    <color name="base_red">#800020</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="cta_default_color">@color/base_blue</color>
+    <color name="cta_default_color_disabled">@color/grey_mid</color>
+    <color name="gradient_start">@color/base_blue</color>
+
+    <!-- grays -->
+    <color name="background_color">#f6f8ff</color>
+    <color name="lighter_grey">#f8f8f8</color>
+    <color name="light_grey">#afafaf</color>
+    <color name="light_grey_2">#979797</color>
+    <color name="grey">#8b999f</color>
+    <color name="grey_2">#878787</color>
+    <color name="grey_3">#757575</color>
+    <color name="grey_4">#545454</color>
+    <color name="grey_mid">#676767</color>
+    <color name="dark_grey">#4a4a4a</color>
+    <color name="very_dark_grey">#424140</color>
+    <color name="very_dark_grey_2">#3e3e3e</color>
+    <color name="almost_black">#202020</color>
+</resources>

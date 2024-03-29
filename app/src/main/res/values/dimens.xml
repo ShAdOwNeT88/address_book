@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Standard dimensions-->
+    <dimen name="card_radius_default">8dp</dimen>
+    <dimen name="elevation_progress">10dp</dimen>
+    <dimen name="elevation_standard">4dp</dimen>
+    <dimen name="no_elevation">0dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="address_book_peekHeight">90dp</dimen>
+    <dimen name="profile_avatar_size">70dp</dimen>
+    <dimen name="fab_size">40dp</dimen>
+    <dimen name="edit_fab_size">28dp</dimen>
+    <dimen name="view_match_constraint">0dp</dimen>
+    <dimen name="bottom_navigation_height">60dp</dimen>
+    <dimen name="edit_text_height">60dp</dimen>
+    <dimen name="button_radius">26dp</dimen>
+    <dimen name="stroke_width">2dp</dimen>
+
+    <!-- Standard dimensions for text-->
+    <dimen name="address_book_text_size_title_big">28sp</dimen>
+    <dimen name="address_book_text_size_title">20sp</dimen>
+    <dimen name="address_book_text_size_bigger">16sp</dimen>
+    <dimen name="address_book_text_size_default">14sp</dimen>
+    <dimen name="address_book_text_size_small">12sp</dimen>
+    <dimen name="address_book_text_size_smaller">11sp</dimen>
+    <dimen name="address_book_text_size_very_small">8sp</dimen>
+    <dimen name="line_spacing_default">4sp</dimen>
+
+    <!-- Standard dimensions for margins -->
+    <dimen name="address_book_margin_xxxbig">72dp</dimen>
+    <dimen name="address_book_margin_xxbig">48dp</dimen>
+    <dimen name="address_book_margin_xbig">32dp</dimen>
+    <dimen name="address_book_margin_verybig">24dp</dimen>
+    <dimen name="address_book_margin_big">20dp</dimen>
+    <dimen name="address_book_margin_bigger">16dp</dimen>
+    <dimen name="address_book_margin_default">12dp</dimen>
+    <dimen name="address_book_margin_small">8dp</dimen>
+    <dimen name="address_book_margin_smaller">4dp</dimen>
+    <dimen name="address_book_margin_very_small">2dp</dimen>
+
+    <!-- Standard dimensions for icons -->
+    <dimen name="address_book_icon_xxxxlarge_size">200dp</dimen>
+    <dimen name="address_book_icon_xxxlarge_size">100dp</dimen>
+    <dimen name="address_book_icon_xxlarge_size">80dp</dimen>
+    <dimen name="address_book_icon_xlarge_size">60dp</dimen>
+    <dimen name="address_book_icon_verybig_size">40dp</dimen>
+    <dimen name="address_book_icon_medium_size">32dp</dimen>
+    <dimen name="address_book_icon_default_size">20dp</dimen>
+    <dimen name="address_book_icon_small_size">16dp</dimen>
+
+    <!-- Standard dimensions for buttons-->
+    <dimen name="address_book_button_width_bigger">260dp</dimen>
+    <dimen name="address_book_button_padding">12dp</dimen>
+    <dimen name="address_book_button_padding_bigger">16dp</dimen>
+    <dimen name="address_book_button_radius">8dp</dimen>
+    <dimen name="address_book_button_vertical_distance">12dp</dimen>
+    <dimen name="address_book_button_width">200dp</dimen>
+    <dimen name="address_book_default_padding">4dp</dimen>
+    <dimen name="address_book_padding_very_small">2dp</dimen>
+    <dimen name="address_book_stroke_width">2dp</dimen>
+
+    <!-- Dimensions for Monument Dashboard Section-->
+    <dimen name="cardview_margin_bottom">40dp</dimen>
+
+    <!-- Dimensions for monument details view pager -->
+    <dimen name="view_pager_height">320dp</dimen>
+
+    <!-- Dimensions for scrollbar -->
+    <dimen name="scrollbar_height">4dp</dimen>
+    <dimen name="scrollbar_width">1dp</dimen>
+
+    <!-- Dimensions for onboarding -->
+    <dimen name="onboarding_indicator_radius">4dp</dimen>
+    <dimen name="onboarding_image_width">268dp</dimen>
+    <dimen name="onboarding_image_height">312dp</dimen>
+
+</resources>

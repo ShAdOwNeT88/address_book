@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/address_book_margin_small"
+    android:background="@color/white"
+    app:layout_constraintCircleRadius="@dimen/card_radius_default">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/contact_details_name_surname"
+            style="@style/PrimaryText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/address_book_margin_small"
+            android:layout_marginEnd="@dimen/address_book_margin_small"
+            android:layout_marginTop="@dimen/address_book_margin_default"
+            android:textSize="@dimen/address_book_text_size_bigger"
+            app:layout_constraintEnd_toStartOf="@id/contact_details_delete_action"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Antonio Iovine" />
+
+        <TextView
+            android:id="@+id/contact_details_phone"
+            style="@style/SecondaryText"
+            android:layout_width="@dimen/view_match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/address_book_margin_small"
+            android:layout_marginTop="@dimen/address_book_margin_small"
+            android:textSize="@dimen/address_book_text_size_default"
+            android:layout_marginEnd="@dimen/address_book_margin_small"
+            app:layout_constraintEnd_toStartOf="@id/contact_details_delete_action"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_details_name_surname"
+            tools:text="327 1234568" />
+
+        <TextView
+            android:id="@+id/contact_details_email"
+            style="@style/SecondaryText"
+            android:layout_width="@dimen/view_match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/address_book_margin_small"
+            android:layout_marginTop="@dimen/address_book_margin_small"
+            android:textSize="@dimen/address_book_text_size_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_details_phone"
+            tools:text="prova@prova.it" />
+
+        <TextView
+            android:id="@+id/contact_details_address"
+            style="@style/SecondaryText"
+            android:layout_width="@dimen/view_match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/address_book_margin_small"
+            android:layout_marginTop="@dimen/address_book_margin_small"
+            android:textSize="@dimen/address_book_text_size_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_details_email"
+            tools:text="Via qualcosa, 32" />
+
+        <ImageView
+            android:id="@+id/contact_details_delete_action"
+            android:layout_width="@dimen/address_book_icon_medium_size"
+            android:layout_height="@dimen/address_book_icon_medium_size"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_trash"
+            android:layout_marginEnd="@dimen/address_book_margin_default"
+            android:layout_marginTop="@dimen/address_book_margin_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/action_delete" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

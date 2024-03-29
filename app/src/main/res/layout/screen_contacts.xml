@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.contacts.ContactsScreen">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progress"
+        android:layout_width="@dimen/address_book_margin_xxbig"
+        android:layout_height="@dimen/address_book_margin_xxbig"
+        android:elevation="@dimen/address_book_margin_big"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/contacts_empty_list"
+        style="@style/SecondaryText.Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/contacts_empty_list"
+        android:textSize="@dimen/address_book_text_size_default"
+        android:visibility="gone"
+        android:layout_marginStart="@dimen/address_book_margin_big"
+        android:layout_marginEnd="@dimen/address_book_margin_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contacts_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/address_book_margin_small"
+        android:layout_marginEnd="@dimen/address_book_margin_small"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="3"
+        tools:listitem="@layout/contact_details_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.about.AboutScreen">
+
+    <TextView
+        android:id="@+id/about_title"
+        style="@style/PrimaryText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/address_book_margin_small"
+        android:layout_marginTop="@dimen/address_book_margin_default"
+        android:layout_marginEnd="@dimen/address_book_margin_small"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/about_description"
+        style="@style/SecondaryText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/address_book_margin_small"
+        android:layout_marginTop="@dimen/address_book_margin_small"
+        android:layout_marginEnd="@dimen/address_book_margin_small"
+        android:layout_marginBottom="@dimen/address_book_margin_small"
+        android:justificationMode="inter_word"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/about_title" />
+
+
+    <TextView
+        android:id="@+id/about_app_version"
+        style="@style/SecondaryText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/address_book_margin_small"
+        android:layout_marginEnd="@dimen/address_book_margin_small"
+        android:layout_marginBottom="@dimen/address_book_margin_small"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="App version 1.0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
