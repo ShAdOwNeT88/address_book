@@ -16,4 +16,5 @@
     <string name="add_contact_surname">Cognome</string>
     <string name="add_contact_name">Nome</string>
     <string name="contacts_empty_list">Nessun contatto disponibile. Prova prima ad aggiungerne uno.</string>
+    <string name="contacts_search_contact">Cerca contatto</string>
 </resources>

@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".features.contacts.ContactsScreen">
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/contacts_search"
+        style="@style/EditTextBase"
+        android:layout_width="0dp"
+        android:layout_marginBottom="@dimen/address_book_margin_default"
+        android:autofillHints="Auto fill"
+        android:hint="@string/contacts_search_contact"
+        android:singleLine="true"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_search"
+        android:layout_marginTop="@dimen/address_book_margin_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/progress_bar"
         style="?android:attr/progress"
@@ -29,12 +46,13 @@
         android:text="@string/contacts_empty_list"
         android:textSize="@dimen/address_book_text_size_default"
         android:visibility="gone"
+        android:layout_marginTop="@dimen/address_book_margin_default"
         android:layout_marginStart="@dimen/address_book_margin_big"
         android:layout_marginEnd="@dimen/address_book_margin_big"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/contacts_search" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contacts_list"
@@ -49,7 +67,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contacts_search"
         tools:itemCount="3"
         tools:listitem="@layout/contact_details_item" />
 

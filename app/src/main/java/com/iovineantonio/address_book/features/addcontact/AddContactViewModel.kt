@@ -6,7 +6,7 @@ import com.iovineantonio.address_book.features.addcontact.domain.ContactAuthenti
 import com.iovineantonio.address_book.features.database.ContactEntity
 import com.iovineantonio.address_book.features.database.ContactRepository
 import io.reactivex.rxjava3.core.Scheduler
-import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.addTo
 import io.reactivex.rxjava3.schedulers.Schedulers
 
@@ -33,8 +33,7 @@ sealed class AddContactState {
 
 class AddContactViewModel(private val scheduler: Scheduler, private val contactRepository: ContactRepository) :
     BaseViewModel<AddContactState, AddContactEvent>() {
-
-    private var createContactSubscription = Disposable.disposed()
+    private val compositeDisposable = CompositeDisposable()
 
     override fun send(event: AddContactEvent) {
         when (event) {
@@ -62,28 +61,26 @@ class AddContactViewModel(private val scheduler: Scheduler, private val contactR
     }
 
     private fun saveContact(contact: Contact) {
-        if (createContactSubscription.isDisposed) {
-            post(AddContactState.InProgress)
-            createContactSubscription = contactRepository.insert(
-                ContactEntity(
-                    id = null,
-                    name = contact.name,
-                    surname = contact.surname,
-                    phoneNumber = contact.phoneNumber,
-                    email = contact.email,
-                    address = contact.address
-                )
+        post(AddContactState.InProgress)
+        contactRepository.insert(
+            ContactEntity(
+                id = null,
+                name = contact.name,
+                surname = contact.surname,
+                phoneNumber = contact.phoneNumber,
+                email = contact.email,
+                address = contact.address
             )
-                .observeOn(scheduler)
-                .subscribeOn(Schedulers.io())
-                .subscribe(
-                    { post(AddContactState.SaveCompleted) },
-                    { error -> post(AddContactState.Error(error)) }
-                ).addTo(disposables)
-        }
+        )
+            .observeOn(scheduler)
+            .subscribeOn(Schedulers.io())
+            .subscribe(
+                { post(AddContactState.SaveCompleted) },
+                { error -> post(AddContactState.Error(error)) }
+            ).addTo(compositeDisposable)
     }
 
     private fun unsubscribeFromEvents() {
-        disposables.dispose()
+        compositeDisposable.clear()
     }
 }

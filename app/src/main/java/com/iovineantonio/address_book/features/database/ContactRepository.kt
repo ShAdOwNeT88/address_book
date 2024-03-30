@@ -27,4 +27,7 @@ class ContactRepository(private val todoDao: ContactDao) {
             address = contact.address
         )
     }
+
+    fun findBySurname(surname: String): Observable<List<ContactEntity>> =
+        todoDao.findBySurname(surname = surname)
 }

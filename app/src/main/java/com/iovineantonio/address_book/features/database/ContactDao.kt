@@ -22,4 +22,7 @@ interface ContactDao {
 
     @Query("UPDATE contacts set name = :name, surname = :surname, phoneNumber = :phoneNumber, email = :email, address = :address where id = :id")
     fun update(id: Int?, name: String?, surname: String?, phoneNumber: String?, email: String?, address: String?): Single<Int>
+
+    @Query("SELECT * FROM contacts WHERE surname LIKE :surname ORDER BY id ASC")
+    fun findBySurname(surname: String): Observable<List<ContactEntity>>
 }

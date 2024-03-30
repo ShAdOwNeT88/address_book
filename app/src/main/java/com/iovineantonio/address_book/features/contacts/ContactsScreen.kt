@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -29,6 +30,7 @@ class ContactsScreen : Fragment() {
         val root: View = binding.root
         setupContactsViewModel()
         setContactsList()
+        setSearch()
         contactsViewModel.send(ContactsEvent.RetrieveAllContacts)
         return root
     }
@@ -85,6 +87,20 @@ class ContactsScreen : Fragment() {
         binding.contactsList.visible(true)
         binding.contactsEmptyList.visible(false)
         contactsAdapter.submitList(contacts)
+    }
+
+    private fun setSearch() {
+        binding.contactsSearch.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                if (binding.contactsSearch.text?.isBlank() == true) {
+                    contactsViewModel.send(ContactsEvent.RetrieveAllContacts)
+                } else {
+                    val surnameToSearch = binding.contactsSearch.text.toString()
+                    contactsViewModel.send(ContactsEvent.RequestToFindContactsBySurname(surnameToSearch))
+                }
+            }
+            return@setOnEditorActionListener true
+        }
     }
 
     private fun showError(error: Throwable) {
