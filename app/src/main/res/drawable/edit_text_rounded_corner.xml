@@ -26,7 +26,7 @@
             <solid android:color="@color/white"/>
             <stroke
                 android:width="@dimen/stroke_width"
-                android:color="@color/light_grey" />
+                android:color="@color/black" />
             <corners android:radius="@dimen/address_book_button_radius" />
         </shape>
     </item>
