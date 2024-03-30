@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.iovineantonio.address_book.databinding.ContactDetailsItemBinding
 import com.iovineantonio.address_book.features.addcontact.domain.Contact
+import com.iovineantonio.address_book.utils.createUnderlinedString
+
 
 class ContactsAdapter(val context: Context, private val contactsListener: ContactListener) : ListAdapter<Contact, ContactsViewHolder>(NewsDiffCallback()) {
 
@@ -35,8 +37,8 @@ class ContactsViewHolder(private var binding: ContactDetailsItemBinding) : Recyc
 
     fun bind(contact: Contact, contactListener: ContactListener) {
         binding.contactDetailsNameSurname.text = contact.name.plus(" ").plus(contact.surname)
-        binding.contactDetailsPhone.text = contact.phoneNumber
-        binding.contactDetailsEmail.text = contact.email
+        binding.contactDetailsPhone.text = createUnderlinedString(contact.phoneNumber)
+        binding.contactDetailsEmail.text = createUnderlinedString(contact.email)
         binding.contactDetailsAddress.text = contact.address
 
         binding.contactDetailsDeleteAction.setOnClickListener {

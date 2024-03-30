@@ -13,7 +13,9 @@ import android.graphics.drawable.Drawable
 import android.media.Image
 import android.net.Uri
 import android.provider.MediaStore
+import android.text.SpannableString
 import android.text.Spanned
+import android.text.style.UnderlineSpan
 import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.inputmethod.InputMethodManager
@@ -291,5 +293,11 @@ fun setForceShowMenuIcon(popupMenu: PopupMenu) {
     } catch (e: Throwable) {
         Timber.e("error force show menu icons $e")
     }
+}
+
+fun createUnderlinedString(stringToUnderline: String): SpannableString {
+    val spannableString = SpannableString(stringToUnderline)
+    spannableString.setSpan(UnderlineSpan(), 0, spannableString.length, 0)
+    return spannableString
 }
 
