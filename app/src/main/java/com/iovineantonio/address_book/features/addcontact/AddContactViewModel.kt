@@ -3,6 +3,7 @@ package com.iovineantonio.address_book.features.addcontact
 import com.iovineantonio.address_book.base.BaseViewModel
 import com.iovineantonio.address_book.features.addcontact.domain.Contact
 import com.iovineantonio.address_book.features.addcontact.domain.ContactAuthenticator
+import com.iovineantonio.address_book.features.addcontact.domain.toEntity
 import com.iovineantonio.address_book.features.database.ContactEntity
 import com.iovineantonio.address_book.features.database.ContactRepository
 import io.reactivex.rxjava3.core.Scheduler
@@ -21,6 +22,7 @@ sealed class AddContactEvent {
     ) : AddContactEvent()
 
     data class RequestToSaveContact(val name: String, val surname: String, val address: String, val email: String, val phoneNumber: String) : AddContactEvent()
+    object RequestToSaveMockContacts : AddContactEvent()
 }
 
 sealed class AddContactState {
@@ -57,6 +59,39 @@ class AddContactViewModel(private val scheduler: Scheduler, private val contactR
                 )
                 saveContact(contact)
             }
+
+            is AddContactEvent.RequestToSaveMockContacts -> saveContacts(
+                listOf(
+                    Contact.ContactWithoutId(
+                        name = "Mario",
+                        surname = "Rossi",
+                        phoneNumber = "3333333331",
+                        email = "mario.rossi@email.com",
+                        address = "Via Rossi 1, Roma"
+                    ),
+                    Contact.ContactWithoutId(
+                        name = "Giuseppe",
+                        surname = "Verdi",
+                        phoneNumber = "3333333332",
+                        email = "giuseppe.verdi@email.com",
+                        address = "Via Verdi 2, Foligno"
+                    ),
+                    Contact.ContactWithoutId(
+                        name = "Antonio",
+                        surname = "Passalacqua",
+                        phoneNumber = "3333333333",
+                        email = "antonio.passa@email.com",
+                        address = "Via Rossi 1, Firenze"
+                    ),
+                    Contact.ContactWithoutId(
+                        name = "Italo",
+                        surname = "Bianchi",
+                        phoneNumber = "3333333334",
+                        email = "italo.bianchi@email.com",
+                        address = "Via Rossi 1, Urbino"
+                    ),
+                )
+            )
         }
     }
 
@@ -72,6 +107,17 @@ class AddContactViewModel(private val scheduler: Scheduler, private val contactR
                 address = contact.address
             )
         )
+            .observeOn(scheduler)
+            .subscribeOn(Schedulers.io())
+            .subscribe(
+                { post(AddContactState.SaveCompleted) },
+                { error -> post(AddContactState.Error(error)) }
+            ).addTo(compositeDisposable)
+    }
+
+    private fun saveContacts(contacts: List<Contact>) {
+        post(AddContactState.InProgress)
+        contactRepository.insertAll(contacts.map { (it as Contact.ContactWithoutId).toEntity() })
             .observeOn(scheduler)
             .subscribeOn(Schedulers.io())
             .subscribe(

@@ -10,7 +10,6 @@ import androidx.lifecycle.lifecycleScope
 import arrow.core.Tuple5
 import com.iovineantonio.address_book.R
 import com.iovineantonio.address_book.databinding.ScreenAddContactBinding
-import com.iovineantonio.address_book.features.Navigator
 import com.iovineantonio.address_book.features.addcontact.domain.ContactAuthenticator
 import com.iovineantonio.address_book.utils.exhaustive
 import com.iovineantonio.address_book.utils.visible
@@ -29,25 +28,27 @@ class AddContactScreen : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = ScreenAddContactBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        setupMonumentDetailsViewModel()
+        setupAddContactViewModel()
         setupInputObserver()
-        binding.saveContactAction.isEnabled = false
+        setActions()
         return root
     }
 
-    private fun setupMonumentDetailsViewModel() {
+    private fun setupAddContactViewModel() {
         addContactViewModel.observe(lifecycleScope) { state ->
             when (state) {
                 is AddContactState.Error -> showError(state.error)
                 is AddContactState.InProgress -> showProgress()
                 is AddContactState.SaveEnabled -> {
-                    setActions(state.request)
+                    setSaveAction(state.request)
                     binding.saveContactAction.isEnabled = true
                 }
+
                 is AddContactState.SaveDisabled -> binding.saveContactAction.isEnabled = false
                 is AddContactState.SaveCompleted -> {
                     hideProgress()
                     clearFields()
+                    showCompleted()
                 }
             }.exhaustive
         }
@@ -70,7 +71,7 @@ class AddContactScreen : Fragment() {
         ).addTo(disposables)
     }
 
-    private fun setActions(request: ContactAuthenticator.AddContactRequest) {
+    private fun setSaveAction(request: ContactAuthenticator.AddContactRequest) {
         binding.saveContactAction.setOnClickListener {
             addContactViewModel.send(
                 AddContactEvent.RequestToSaveContact(
@@ -82,6 +83,11 @@ class AddContactScreen : Fragment() {
                 )
             )
         }
+    }
+
+    private fun setActions() {
+        binding.saveContactAction.isEnabled = false
+        binding.addMockContactsAction.setOnClickListener { addContactViewModel.send(AddContactEvent.RequestToSaveMockContacts) }
     }
 
     private fun showError(error: Throwable) {
@@ -96,6 +102,10 @@ class AddContactScreen : Fragment() {
         binding.addContactAddress.text.clear()
         binding.addContactEmail.text.clear()
         binding.addContactPhoneNumber.text.clear()
+    }
+
+    private fun showCompleted() {
+        Toast.makeText(requireContext(), resources.getString(R.string.save_completed), Toast.LENGTH_LONG).show()
     }
 
     private fun showProgress() {

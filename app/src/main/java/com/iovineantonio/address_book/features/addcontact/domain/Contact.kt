@@ -42,6 +42,17 @@ fun Contact.ContactWithId.toEntity(): ContactEntity {
     )
 }
 
+fun Contact.ContactWithoutId.toEntity(): ContactEntity {
+    return ContactEntity(
+        id = null,
+        name = name,
+        surname = surname,
+        phoneNumber = phoneNumber,
+        email = email,
+        address = address
+    )
+}
+
 fun ContactEntity.toDomain(): Contact.ContactWithId {
     return Contact.ContactWithId(
         id = this.id ?: 0,
