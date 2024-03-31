@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="about_title">About</string>
+    <string name="action_add_mock_contacts">Add mock contacts</string>
     <string name="action_delete">Delete contact</string>
     <string name="action_not_implemented">Action not implemented - coming soon!</string>
     <string name="action_save_contact">Save contact</string>
@@ -17,4 +18,5 @@
     <string name="add_contact_name">Name</string>
     <string name="contacts_empty_list">No contacts available. Please add one contact before.</string>
     <string name="contacts_search_contact">Search for a contact</string>
+    <string name="save_completed">Save completed</string>
 </resources>

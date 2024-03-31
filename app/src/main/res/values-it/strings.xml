@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="about_title">Informazioni</string>
+    <string name="action_add_mock_contacts">Aggiungi contatti mock</string>
     <string name="action_delete">Elimina contatto</string>
     <string name="action_not_implemented">Azione non ancora implementata - arriverà presto!</string>
-    <string name="action_save_contact">Salva contatto</string>d
+    <string name="action_save_contact">Salva contatto</string>
     <string name="accessibility_back_button">Indietro</string>
     <string name="app_version">Versione app %s(%d)</string>
     <string name="generic_error">Errore durante il recupero delle informazioni, riprova più tardi.</string>
@@ -17,4 +18,5 @@
     <string name="add_contact_name">Nome</string>
     <string name="contacts_empty_list">Nessun contatto disponibile. Prova prima ad aggiungerne uno.</string>
     <string name="contacts_search_contact">Cerca contatto</string>
+    <string name="save_completed">Salvataggio completato</string>
 </resources>
