@@ -14,6 +14,9 @@ interface ContactDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(contact: ContactEntity): Completable
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(vararg contact: ContactEntity): Completable
+
     @Delete
     fun delete(contact: ContactEntity): Completable
 

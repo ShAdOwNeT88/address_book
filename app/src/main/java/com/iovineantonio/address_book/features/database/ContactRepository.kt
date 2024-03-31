@@ -13,6 +13,10 @@ class ContactRepository(private val todoDao: ContactDao) {
         return todoDao.insert(contact)
     }
 
+    fun insertAll(contacts: List<ContactEntity>): Completable {
+        return todoDao.insertAll(*contacts.toTypedArray())
+    }
+
     fun delete(contact: ContactEntity): Completable {
         return todoDao.delete(contact)
     }
