@@ -15,6 +15,8 @@
     <string name="add_contact_title">Contact details</string>
     <string name="app_version">App version %s(%d)</string>
     <string name="contacts_empty_list">No contacts available. Please add one contact before.</string>
+    <string name="contact_menu_delete_contact">Delete contact</string>
+    <string name="contact_menu_update_contact">Update contact</string>
     <string name="contacts_search_contact">Search for a contact</string>
     <string name="edit_contact_title">Edit contact</string>
     <string name="edit_contact_successfully_updated">Successfully updated contact</string>
