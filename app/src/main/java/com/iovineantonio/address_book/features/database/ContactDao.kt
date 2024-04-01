@@ -20,6 +20,9 @@ interface ContactDao {
     @Delete
     fun delete(contact: ContactEntity): Completable
 
+    @Query("DELETE FROM contacts")
+    fun deleteAllContacts(): Completable
+
     @Query("SELECT * from contacts order by id ASC")
     fun getAllContacts(): Observable<List<ContactEntity>>
 

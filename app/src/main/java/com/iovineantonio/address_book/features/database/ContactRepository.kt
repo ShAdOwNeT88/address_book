@@ -14,6 +14,7 @@ class ContactRepository(private val todoDao: ContactDao) {
     fun insertAll(contacts: List<ContactEntity>): Completable = todoDao.insertAll(*contacts.toTypedArray())
 
     fun delete(contact: ContactEntity): Completable = todoDao.delete(contact)
+    fun deleteAllContacts(): Completable = todoDao.deleteAllContacts()
 
     fun update(contact: ContactEntity): Single<Int> {
         return todoDao.update(
