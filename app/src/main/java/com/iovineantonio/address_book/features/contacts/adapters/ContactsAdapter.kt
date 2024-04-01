@@ -2,6 +2,7 @@ package com.iovineantonio.address_book.features.contacts.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -42,7 +43,7 @@ class ContactsViewHolder(private var binding: ContactDetailsItemBinding) : Recyc
         binding.contactDetailsAddress.text = contact.address
 
         binding.contactDetailsDeleteAction.setOnClickListener {
-            contactListener.deleteContact(contact)
+            contactListener.openContactMenu(contact = contact, view = this.binding.contactDetailsDeleteAction)
         }
 
         binding.contactDetailsPhone.setOnClickListener {
@@ -56,7 +57,7 @@ class ContactsViewHolder(private var binding: ContactDetailsItemBinding) : Recyc
 }
 
 interface ContactListener {
-    fun deleteContact(contact: Contact.ContactWithId)
+    fun openContactMenu(contact: Contact.ContactWithId, view: View)
     fun callContact(contact: Contact.ContactWithId)
     fun emailContact(contact: Contact.ContactWithId)
 }

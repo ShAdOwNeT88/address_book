@@ -2,9 +2,11 @@ package com.iovineantonio.address_book.features.contacts
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -54,8 +56,8 @@ class ContactsScreen : Fragment() {
         contactsAdapter = ContactsAdapter(
             context = requireContext(),
             contactsListener = object : ContactListener {
-                override fun deleteContact(contact: Contact.ContactWithId) {
-                    contactsViewModel.send(ContactsEvent.RequestToDeleteContact(contact = contact))
+                override fun openContactMenu(contact: Contact.ContactWithId, view: View) {
+                    showContactMenu(v = view, contact = contact)
                 }
 
                 override fun callContact(contact: Contact.ContactWithId) {
@@ -70,6 +72,23 @@ class ContactsScreen : Fragment() {
 
         binding.contactsList.adapter = contactsAdapter
     }
+
+    private fun showContactMenu(v: View, contact: Contact.ContactWithId) {
+        val popup = PopupMenu(requireContext(), v)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.contact_menu, popup.menu)
+        popup.show()
+
+        //Manage menu entry selection
+        popup.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.delete_contact -> contactsViewModel.send(ContactsEvent.RequestToDeleteContact(contact = contact))
+                R.id.update_contact -> navigator.openEditContactScreen(activity = requireActivity(), contactId = contact.id)
+            }
+            return@setOnMenuItemClickListener true
+        }
+    }
+
 
     private fun showEmptyContactsSection() {
         hideProgress()
