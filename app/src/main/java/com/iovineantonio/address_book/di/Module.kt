@@ -2,6 +2,7 @@ package com.iovineantonio.address_book.di
 
 import com.iovineantonio.address_book.features.AppNavigator
 import com.iovineantonio.address_book.features.Navigator
+import com.iovineantonio.address_book.features.about.AboutViewModel
 import com.iovineantonio.address_book.features.addcontact.AddContactViewModel
 import com.iovineantonio.address_book.features.contacts.ContactsViewModel
 import com.iovineantonio.address_book.features.database.ContactDatabase
@@ -19,6 +20,7 @@ val viewModels = module {
     viewModel { ContactsViewModel(scheduler = AndroidSchedulers.mainThread(), contactRepository = get()) }
     viewModel { AddContactViewModel(scheduler = AndroidSchedulers.mainThread(), contactRepository = get()) }
     viewModel { EditContactViewModel(scheduler = AndroidSchedulers.mainThread(), contactRepository = get()) }
+    viewModel { AboutViewModel(scheduler = AndroidSchedulers.mainThread(), contactRepository = get()) }
 }
 
 val androidComponents = module {
