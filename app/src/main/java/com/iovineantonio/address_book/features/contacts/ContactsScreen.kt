@@ -54,12 +54,8 @@ class ContactsScreen : Fragment() {
         contactsAdapter = ContactsAdapter(
             context = requireContext(),
             contactsListener = object : ContactListener {
-                override fun deleteContact(contact: Contact) {
-                    if (contact is Contact.ContactWithId) {
-                        contactsViewModel.send(ContactsEvent.RequestToDeleteContact(contact = contact))
-                    } else {
-                        showError(Throwable("Contact must have a valid id"))
-                    }
+                override fun deleteContact(contact: Contact.ContactWithId) {
+                    contactsViewModel.send(ContactsEvent.RequestToDeleteContact(contact = contact))
                 }
 
                 override fun callContact(contact: Contact.ContactWithId) {
