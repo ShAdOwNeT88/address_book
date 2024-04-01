@@ -11,7 +11,7 @@ import com.iovineantonio.address_book.features.addcontact.domain.Contact
 import com.iovineantonio.address_book.utils.createUnderlinedString
 
 
-class ContactsAdapter(val context: Context, private val contactsListener: ContactListener) : ListAdapter<Contact, ContactsViewHolder>(NewsDiffCallback()) {
+class ContactsAdapter(val context: Context, private val contactsListener: ContactListener) : ListAdapter<Contact.ContactWithId, ContactsViewHolder>(NewsDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
         val binding = ContactDetailsItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -24,9 +24,9 @@ class ContactsAdapter(val context: Context, private val contactsListener: Contac
     }
 }
 
-class NewsDiffCallback : DiffUtil.ItemCallback<Contact>() {
-    override fun areItemsTheSame(oldItem: Contact, newItem: Contact): Boolean = oldItem.email == newItem.email
-    override fun areContentsTheSame(oldItem: Contact, newItem: Contact): Boolean = (oldItem.name == newItem.name)
+class NewsDiffCallback : DiffUtil.ItemCallback<Contact.ContactWithId>() {
+    override fun areItemsTheSame(oldItem: Contact.ContactWithId, newItem: Contact.ContactWithId): Boolean = oldItem.email == newItem.email
+    override fun areContentsTheSame(oldItem: Contact.ContactWithId, newItem: Contact.ContactWithId): Boolean = (oldItem.name == newItem.name)
             && (oldItem.surname == newItem.surname)
             && (oldItem.phoneNumber == newItem.phoneNumber)
             && (oldItem.email == newItem.email)
@@ -35,7 +35,7 @@ class NewsDiffCallback : DiffUtil.ItemCallback<Contact>() {
 
 class ContactsViewHolder(private var binding: ContactDetailsItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(contact: Contact, contactListener: ContactListener) {
+    fun bind(contact: Contact.ContactWithId, contactListener: ContactListener) {
         binding.contactDetailsNameSurname.text = contact.name.plus(" ").plus(contact.surname)
         binding.contactDetailsPhone.text = createUnderlinedString(contact.phoneNumber)
         binding.contactDetailsEmail.text = createUnderlinedString(contact.email)
@@ -56,7 +56,7 @@ class ContactsViewHolder(private var binding: ContactDetailsItemBinding) : Recyc
 }
 
 interface ContactListener {
-    fun deleteContact(contact: Contact)
-    fun callContact(contact: Contact)
-    fun emailContact(contact: Contact)
+    fun deleteContact(contact: Contact.ContactWithId)
+    fun callContact(contact: Contact.ContactWithId)
+    fun emailContact(contact: Contact.ContactWithId)
 }

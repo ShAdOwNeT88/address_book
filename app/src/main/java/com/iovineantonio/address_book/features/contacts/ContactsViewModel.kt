@@ -20,7 +20,7 @@ sealed class ContactsEvent {
 }
 
 sealed class ContactsState {
-    data class RetrievedContacts(val contacts: List<Contact>) : ContactsState()
+    data class RetrievedContacts(val contacts: List<Contact.ContactWithId>) : ContactsState()
     object RetrievedEmptyContactList : ContactsState()
     object DeletedContact : ContactsState()
     data class Error(val error: Throwable) : ContactsState()

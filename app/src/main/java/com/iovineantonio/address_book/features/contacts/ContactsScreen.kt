@@ -62,11 +62,11 @@ class ContactsScreen : Fragment() {
                     }
                 }
 
-                override fun callContact(contact: Contact) {
+                override fun callContact(contact: Contact.ContactWithId) {
                     navigator.openDialer(requireActivity(), contact.phoneNumber)
                 }
 
-                override fun emailContact(contact: Contact) {
+                override fun emailContact(contact: Contact.ContactWithId) {
                     navigator.openEmail(requireActivity(), contact.email)
                 }
             }
@@ -82,7 +82,7 @@ class ContactsScreen : Fragment() {
 
     }
 
-    private fun showContactsSection(contacts: List<Contact>) {
+    private fun showContactsSection(contacts: List<Contact.ContactWithId>) {
         hideProgress()
         binding.contactsList.visible(true)
         binding.contactsEmptyList.visible(false)
@@ -105,7 +105,7 @@ class ContactsScreen : Fragment() {
 
     private fun showError(error: Throwable) {
         hideProgress()
-        Timber.e("Error in Contacts section: $error")
+        Timber.e("[ContactsScreen] Error: $error")
         Toast.makeText(requireContext(), getString(R.string.generic_error), Toast.LENGTH_LONG).show()
     }
 
