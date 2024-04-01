@@ -14,7 +14,6 @@ import org.koin.android.ext.android.inject
 
 class AboutScreen : Fragment() {
     private lateinit var binding: ScreenAboutBinding
-    private val navigator: Navigator by inject()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = ScreenAboutBinding.inflate(inflater, container, false)

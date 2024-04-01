@@ -92,7 +92,7 @@ class AddContactScreen : Fragment() {
 
     private fun showError(error: Throwable) {
         hideProgress()
-        Timber.e("Error in Add Contact section: $error")
+        Timber.e("[AddContactScreen] Error: $error")
         Toast.makeText(requireContext(), getString(R.string.generic_error), Toast.LENGTH_LONG).show()
     }
 
