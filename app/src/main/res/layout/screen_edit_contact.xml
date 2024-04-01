@@ -82,57 +82,155 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edit_contact_name"
-                style="@style/EditTextBase"
+            <cz.ackee.ui.textfield.TextInputLayout
+                android:id="@+id/edit_contact_name_container"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/address_book_margin_bigger"
+                android:layout_marginEnd="@dimen/address_book_margin_bigger"
                 android:layout_marginBottom="@dimen/address_book_margin_default"
-                android:autofillHints="Auto fill"
                 android:hint="@string/add_contact_name"
-                android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColorHint="@color/black"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusBottomStart="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopStart="@dimen/address_book_margin_small"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintEnabled="true"
+                app:hintPaddingTop="@dimen/address_book_margin_default"
+                app:hintTextAppearance="@style/TextAppearance.Design.Hint">
 
-            <EditText
-                android:id="@+id/edit_contact_surname"
-                style="@style/EditTextBase"
+                <cz.ackee.ui.textfield.TextInputEditText
+                    android:id="@+id/edit_contact_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="@dimen/address_book_margin_big"
+                    android:singleLine="true" />
+            </cz.ackee.ui.textfield.TextInputLayout>
+
+            <cz.ackee.ui.textfield.TextInputLayout
+                android:id="@+id/edit_contact_surname_container"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/address_book_margin_bigger"
+                android:layout_marginEnd="@dimen/address_book_margin_bigger"
                 android:layout_marginBottom="@dimen/address_book_margin_default"
-                android:autofillHints="Auto fill"
                 android:hint="@string/add_contact_surname"
-                android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColorHint="@color/black"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusBottomStart="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopStart="@dimen/address_book_margin_small"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintEnabled="true"
+                app:hintPaddingTop="@dimen/address_book_margin_default"
+                app:hintTextAppearance="@style/TextAppearance.Design.Hint">
 
-            <EditText
-                android:id="@+id/edit_contact_address"
-                style="@style/EditTextBase"
+                <cz.ackee.ui.textfield.TextInputEditText
+                    android:id="@+id/edit_contact_surname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="@dimen/address_book_margin_big"
+                    android:singleLine="true" />
+            </cz.ackee.ui.textfield.TextInputLayout>
+
+            <cz.ackee.ui.textfield.TextInputLayout
+                android:id="@+id/edit_contact_address_container"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/address_book_margin_bigger"
+                android:layout_marginEnd="@dimen/address_book_margin_bigger"
                 android:layout_marginBottom="@dimen/address_book_margin_default"
-                android:autofillHints="Auto fill"
                 android:hint="@string/add_contact_address"
-                android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColorHint="@color/black"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusBottomStart="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopStart="@dimen/address_book_margin_small"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintEnabled="true"
+                app:hintPaddingTop="@dimen/address_book_margin_default"
+                app:hintTextAppearance="@style/TextAppearance.Design.Hint">
 
-            <EditText
-                android:id="@+id/edit_contact_email"
-                style="@style/EditTextBase"
+                <cz.ackee.ui.textfield.TextInputEditText
+                    android:id="@+id/edit_contact_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="@dimen/address_book_margin_big"
+                    android:singleLine="true" />
+            </cz.ackee.ui.textfield.TextInputLayout>
+
+            <cz.ackee.ui.textfield.TextInputLayout
+                android:id="@+id/edit_contact_email_container"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/address_book_margin_bigger"
+                android:layout_marginEnd="@dimen/address_book_margin_bigger"
                 android:layout_marginBottom="@dimen/address_book_margin_default"
-                android:autofillHints="Auto fill"
                 android:hint="@string/add_contact_email"
-                android:inputType="textEmailAddress"
-                android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColorHint="@color/black"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusBottomStart="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopStart="@dimen/address_book_margin_small"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintEnabled="true"
+                app:hintPaddingTop="@dimen/address_book_margin_default"
+                app:hintTextAppearance="@style/TextAppearance.Design.Hint">
 
-            <EditText
-                android:id="@+id/edit_contact_phone_number"
-                style="@style/EditTextBase"
+                <cz.ackee.ui.textfield.TextInputEditText
+                    android:id="@+id/edit_contact_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="@dimen/address_book_margin_big"
+                    android:singleLine="true" />
+            </cz.ackee.ui.textfield.TextInputLayout>
+
+            <cz.ackee.ui.textfield.TextInputLayout
+                android:id="@+id/edit_contact_phone_number_container"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/address_book_margin_bigger"
+                android:layout_marginEnd="@dimen/address_book_margin_bigger"
                 android:layout_marginBottom="@dimen/address_book_margin_default"
-                android:autofillHints="Auto fill"
                 android:hint="@string/add_contact_phone_number"
-                android:inputType="phone"
-                android:singleLine="true"
-                android:textColor="@color/black" />
+                android:textColorHint="@color/black"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusBottomStart="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopEnd="@dimen/address_book_margin_small"
+                app:boxCornerRadiusTopStart="@dimen/address_book_margin_small"
+                app:boxStrokeColor="@color/black"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="1dp"
+                app:hintEnabled="true"
+                app:hintPaddingTop="@dimen/address_book_margin_default"
+                app:hintTextAppearance="@style/TextAppearance.Design.Hint">
+
+                <cz.ackee.ui.textfield.TextInputEditText
+                    android:id="@+id/edit_contact_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="@dimen/address_book_margin_big"
+                    android:singleLine="true" />
+            </cz.ackee.ui.textfield.TextInputLayout>
         </LinearLayout>
     </ScrollView>
 
@@ -141,7 +239,9 @@
         style="@style/ButtonDefault.Flat.Primary"
         android:layout_width="0dp"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/address_book_margin_bigger"
         android:layout_marginTop="@dimen/address_book_margin_default"
+        android:layout_marginEnd="@dimen/address_book_margin_bigger"
         android:contentDescription="@string/action_update_contact"
         android:enabled="true"
         android:saveEnabled="false"
@@ -151,6 +251,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

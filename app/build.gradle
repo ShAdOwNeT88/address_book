@@ -155,6 +155,9 @@ dependencies {
     kapt Libs.room_compiler
     implementation Libs.room_rx_java
 
+    //TEXT INPUT LAYOUT
+    implementation Libs.text_input_layout
+
     // TESTING
     testImplementation TestLibs.assertk
     testImplementation TestLibs.core_testing

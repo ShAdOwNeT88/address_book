@@ -89,6 +89,7 @@ object Libs {
     const val room_runtime = "androidx.room:room-runtime:${Versions.room_db_version}"
     const val room_compiler = "androidx.room:room-compiler:${Versions.room_db_version}"
     const val room_rx_java = "androidx.room:room-rxjava3:2.3.0-alpha02"
+    const val text_input_layout = "io.github.ackeecz:TextInputLayout:1.1.0"
 }
 
 @Suppress("unused")

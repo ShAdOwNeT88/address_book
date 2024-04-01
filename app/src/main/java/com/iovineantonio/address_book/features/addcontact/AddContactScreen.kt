@@ -97,11 +97,11 @@ class AddContactScreen : Fragment() {
     }
 
     private fun clearFields() {
-        binding.addContactName.text.clear()
-        binding.addContactSurname.text.clear()
-        binding.addContactAddress.text.clear()
-        binding.addContactEmail.text.clear()
-        binding.addContactPhoneNumber.text.clear()
+        binding.addContactName.text?.clear()
+        binding.addContactSurname.text?.clear()
+        binding.addContactAddress.text?.clear()
+        binding.addContactEmail.text?.clear()
+        binding.addContactPhoneNumber.text?.clear()
     }
 
     private fun showCompleted() {
