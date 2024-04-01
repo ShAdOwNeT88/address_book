@@ -7,6 +7,7 @@ import io.reactivex.rxjava3.core.Single
 class ContactRepository(private val todoDao: ContactDao) {
 
     fun getAllContacts(): Observable<List<ContactEntity>> = todoDao.getAllContacts()
+    fun findById(contactId: Int): Observable<ContactEntity> = todoDao.getContactById(id = contactId)
 
     fun insert(contact: ContactEntity): Completable = todoDao.insert(contact)
 

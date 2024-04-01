@@ -23,6 +23,9 @@ interface ContactDao {
     @Query("SELECT * from contacts order by id ASC")
     fun getAllContacts(): Observable<List<ContactEntity>>
 
+    @Query("SELECT * from contacts where id = :id")
+    fun getContactById(id: Int): Observable<ContactEntity>
+
     @Query("UPDATE contacts set name = :name, surname = :surname, phoneNumber = :phoneNumber, email = :email, address = :address where id = :id")
     fun update(id: Int?, name: String?, surname: String?, phoneNumber: String?, email: String?, address: String?): Single<Int>
 
