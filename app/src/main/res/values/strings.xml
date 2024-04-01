@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="about_title">About</string>
+    <string name="about_app_title">Address book</string>
+    <string name="about_description"><![CDATA[This app currently has 4 sections:<br><br><b>Add Contact:</b><br><br> Add a new contact, as long as the email address has a correct format.<br>The Save Contact button is enabled when the verification is successful.<br>You can also add test contacts to see how the data is displayed in the Contacts section UI.<br><br><b>Contacts:</b><br><br>View a list of previously saved contacts.<br>Use the menu on the right of each list item to update or delete contacts.<br>Search for contacts by entering their last name.<br>The search will return a result or a list empty message if no matches are found in the database.<br><br><b>Information:</b><br><br>Provides a description of the app\'s features and a button to reset the entire database of saved contacts.<br>Displays the app\'s version number at the bottom, indicating the version currently installed on the device.<br><br><b>Edit Contact:</b><br><br>Allows you to update the information of a particular contact.<br>The Save button is enabled only if the email address has a correct format (if it has been changed).<br>]]></string>
+    <string name="about_deleted_all_contacts">Deleted all contacts from address book</string>
     <string name="accessibility_back_button">Back button</string>
     <string name="action_add_mock_contacts">Add mock contacts</string>
     <string name="action_delete">Delete contact</string>
     <string name="action_not_implemented">Action not implemented - coming soon!</string>
     <string name="action_save_contact">Save contact</string>
     <string name="action_update_contact">Update contact</string>
+    <string name="action_reset_contacts">Delete all contacts</string>
     <string name="add_contact_address">Address</string>
     <string name="add_contact_email">Email</string>
     <string name="add_contact_name">Name</string>
@@ -20,7 +24,7 @@
     <string name="contacts_search_contact">Search for a contact</string>
     <string name="edit_contact_title">Edit contact</string>
     <string name="edit_contact_successfully_updated">Successfully updated contact</string>
-    <string name="generic_error">Error retrieving information, please try again.</string>
+    <string name="generic_error">Error during the operation, please try again.</string>
     <string name="save_completed">Save completed</string>
     <string name="title_add_contact">Add Contact</string>
     <string name="title_dashboard">Contacts</string>

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="about_title">Informazioni</string>
+    <string name="about_app_title">Address book</string>
+    <string name="about_description"><![CDATA[
+    Questa app ha attualmente 4 sezioni:<br><br><b>Aggiungi contatto:</b><br><br>Nella sezione aggiungi contatto e\' possibile aggiungere un contatto a patto che l\'email aggiunta abbia una struttura corretta.<br>Nel momento in cui la verifica va a buon fine il pulsante Salva contatto si abilita.<br>In questa sezione e\' inoltre possibile aggiungere dei contatti di test per avere un idea di come tali dati vengano rappresentati nella ui della sezione Contatti.<br><br><b>Contatti:</b><br><br>Nella sezione Contatti abbiamo la lista dei contatti salvati in precedenza.<br>E\' inoltre possibile per ogni elemento della lista, attraverso il menu sulla destra, eseguire le operazioni di aggiornamento o cancellazione.<br>Ultima ma non meno importante una funzionalita\' di ricerca che permette la ricerca inserendo il cognome, e che ci fara\' comparire il risultato o un messaggio di lista vuota nel caso in cui la ricerca non abbia corrispondenza nel database.<br><br><b>Informazioni:</b><br><br>La sezione informazioni ha la descrizione delle funzionalità ed un pulsante che effettua il reset dell\'intero database di contatti salvati.<br>Inoltre possiede il numero di versione dell\'app in basso che ci da riscontro di quale sia la versione attualmente installata sul dispositivo.<br><br><b>Modifica contatto:</b><br><br>Abbiamo poi la sezione di modifica del contatto che ci permette di aggiornare le informazioni di un particolare contatto.<br>Anche qui l\'abilitazione del pulsante e\' legata alla verifica della struttura dell\'indirizzo email qualora quest\'ultimo cambi.<br>]]></string>
+    <string name="about_deleted_all_contacts">Eliminati tutti i contatti dalla rubrica</string>
     <string name="accessibility_back_button">Indietro</string>
     <string name="action_add_mock_contacts">Aggiungi contatti mock</string>
     <string name="action_delete">Elimina contatto</string>
     <string name="action_not_implemented">Azione non ancora implementata - arriverà presto!</string>
     <string name="action_save_contact">Salva contatto</string>
     <string name="action_update_contact">Aggiorna contatto</string>
+    <string name="action_reset_contacts">Elimina tutti i contatti</string>
     <string name="add_contact_address">Indirizzo</string>
     <string name="add_contact_email">Email</string>
     <string name="add_contact_name">Nome</string>
@@ -20,7 +25,7 @@
     <string name="contacts_search_contact">Cerca contatto</string>
     <string name="edit_contact_title">Modifica contatto</string>
     <string name="edit_contact_successfully_updated">Contatto aggiornato con successo</string>
-    <string name="generic_error">Errore durante il recupero delle informazioni, riprova più tardi.</string>
+    <string name="generic_error">Errore durante l\'operazione, riprova più tardi.</string>
     <string name="save_completed">Salvataggio completato</string>
     <string name="title_add_contact">Aggiungi Contatto</string>
     <string name="title_dashboard">Contatti</string>
