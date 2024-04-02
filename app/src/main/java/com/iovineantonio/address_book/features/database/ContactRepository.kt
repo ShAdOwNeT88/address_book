@@ -8,14 +8,10 @@ class ContactRepository(private val todoDao: ContactDao) {
 
     fun getAllContacts(): Observable<List<ContactEntity>> = todoDao.getAllContacts()
     fun findById(contactId: Int): Observable<ContactEntity> = todoDao.getContactById(id = contactId)
-
     fun insert(contact: ContactEntity): Completable = todoDao.insert(contact)
-
     fun insertAll(contacts: List<ContactEntity>): Completable = todoDao.insertAll(*contacts.toTypedArray())
-
     fun delete(contact: ContactEntity): Completable = todoDao.delete(contact)
     fun deleteAllContacts(): Completable = todoDao.deleteAllContacts()
-
     fun update(contact: ContactEntity): Single<Int> {
         return todoDao.update(
             id = contact.id,

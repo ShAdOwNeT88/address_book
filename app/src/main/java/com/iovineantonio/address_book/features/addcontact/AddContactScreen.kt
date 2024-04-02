@@ -12,6 +12,7 @@ import com.iovineantonio.address_book.R
 import com.iovineantonio.address_book.databinding.ScreenAddContactBinding
 import com.iovineantonio.address_book.features.addcontact.domain.ContactAuthenticator
 import com.iovineantonio.address_book.utils.exhaustive
+import com.iovineantonio.address_book.utils.hideKeyboard
 import com.iovineantonio.address_book.utils.visible
 import com.jakewharton.rxbinding4.widget.textChanges
 import io.reactivex.rxjava3.core.Observable
@@ -49,6 +50,7 @@ class AddContactScreen : Fragment() {
                     hideProgress()
                     clearFields()
                     showCompleted()
+                    requireContext().hideKeyboard()
                 }
             }.exhaustive
         }

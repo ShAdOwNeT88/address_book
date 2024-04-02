@@ -36,7 +36,7 @@ class EditContactScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setupMonumentDetailsViewModel()
+        setupEditContactViewModel()
         binding = ScreenEditContactBinding.inflate(layoutInflater)
 
         contactId = intent.getIntExtra(CONTACT_ID, 0)
@@ -46,7 +46,7 @@ class EditContactScreen : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private fun setupMonumentDetailsViewModel() {
+    private fun setupEditContactViewModel() {
         editContactViewModel.observe(lifecycleScope) { state ->
             when (state) {
                 is EditContactState.Error -> showError(state.error)

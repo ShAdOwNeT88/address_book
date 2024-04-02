@@ -37,6 +37,7 @@
     <dimen name="address_book_margin_small">8dp</dimen>
     <dimen name="address_book_margin_smaller">4dp</dimen>
     <dimen name="address_book_margin_very_small">2dp</dimen>
+    <dimen name="address_book_margin_xsmall">1dp</dimen>
 
     <!-- Standard dimensions for icons -->
     <dimen name="address_book_icon_xxxxlarge_size">200dp</dimen>
