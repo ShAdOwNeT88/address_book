@@ -4,16 +4,16 @@ import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 
-class ContactRepository(private val todoDao: ContactDao) {
+class ContactRepository(private val contactDao: ContactDao) {
 
-    fun getAllContacts(): Observable<List<ContactEntity>> = todoDao.getAllContacts()
-    fun findById(contactId: Int): Observable<ContactEntity> = todoDao.getContactById(id = contactId)
-    fun insert(contact: ContactEntity): Completable = todoDao.insert(contact)
-    fun insertAll(contacts: List<ContactEntity>): Completable = todoDao.insertAll(*contacts.toTypedArray())
-    fun delete(contact: ContactEntity): Completable = todoDao.delete(contact)
-    fun deleteAllContacts(): Completable = todoDao.deleteAllContacts()
+    fun getAllContacts(): Observable<List<ContactEntity>> = contactDao.getAllContacts()
+    fun findById(contactId: Int): Observable<ContactEntity> = contactDao.getContactById(id = contactId)
+    fun insert(contact: ContactEntity): Completable = contactDao.insert(contact)
+    fun insertAll(contacts: List<ContactEntity>): Completable = contactDao.insertAll(*contacts.toTypedArray())
+    fun delete(contact: ContactEntity): Completable = contactDao.delete(contact)
+    fun deleteAllContacts(): Completable = contactDao.deleteAllContacts()
     fun update(contact: ContactEntity): Single<Int> {
-        return todoDao.update(
+        return contactDao.update(
             id = contact.id,
             name = contact.name,
             surname = contact.surname,
@@ -23,5 +23,5 @@ class ContactRepository(private val todoDao: ContactDao) {
         )
     }
 
-    fun findBySurname(surname: String): Observable<List<ContactEntity>> = todoDao.findBySurname(surname = surname)
+    fun findBySurname(surname: String): Observable<List<ContactEntity>> = contactDao.findBySurname(surname = surname)
 }
