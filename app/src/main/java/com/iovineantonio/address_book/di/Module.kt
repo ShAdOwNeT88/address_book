@@ -11,7 +11,7 @@ import com.iovineantonio.address_book.features.editcontact.EditContactViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
-import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 typealias DebugFlag = Boolean
