@@ -7,7 +7,7 @@ pluginManagement {
         maven { url 'https://maven.fabric.io/public' }
         maven { url 'https://mvnrepository.com/artifact/com.ibm.icu/icu4j' }
         maven { url 'https://jitpack.io' }
-        jcenter()
+        mavenCentral()
     }
 }
 dependencyResolutionManagement {
@@ -19,7 +19,7 @@ dependencyResolutionManagement {
         maven { url 'https://maven.fabric.io/public' }
         maven { url 'https://mvnrepository.com/artifact/com.ibm.icu/icu4j' }
         maven { url 'https://jitpack.io' }
-        jcenter()
+        mavenCentral()
     }
 }
 rootProject.name = "address_book"
